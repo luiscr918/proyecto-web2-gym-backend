@@ -22,7 +22,7 @@ public class Servicios {
     private String nombre;
     //descripción
     @NotBlank
-    private String descripción;
+    private String descripcion;
     //urlImagen
     @NotBlank
     private String imagenURL;
