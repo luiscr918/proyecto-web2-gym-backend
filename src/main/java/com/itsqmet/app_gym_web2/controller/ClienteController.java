@@ -24,6 +24,7 @@ public class ClienteController {
     //guardar nuevo cliente
     @PostMapping("/guardar")
     public Cliente guardarCliente(@RequestBody Cliente cliente) {
+        cliente.setRol("CLIENTE");
         return clienteService.guardarCliente(cliente);
     }
 
