@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/suscripciones")
+@CrossOrigin(origins = "http://localhost:4200")
 public class SuscripcionController {
     @Autowired
     private SuscripcionService suscripcionService;
