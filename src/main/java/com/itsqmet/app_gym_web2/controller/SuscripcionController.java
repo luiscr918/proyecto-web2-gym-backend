@@ -26,7 +26,11 @@ public class SuscripcionController {
     public Suscripcion guardarSuscripcion(@RequestBody Suscripcion suscripcion) {
         return suscripcionService.guardarSuscripcion(suscripcion);
     }
-
+    //Buscar Suscripcion por id
+    @PostMapping("buscar/{id}")
+    public Optional<Suscripcion> buscarSuscripcionId(@PathVariable Long id){
+        return suscripcionService.buscarSuscripcionId(id);
+    }
     //actualizar suscripcion
     @PutMapping("/actualizar/{id}")
     public Suscripcion actualizarSuscripcion(@PathVariable Long id, @RequestBody Suscripcion suscripcion) {

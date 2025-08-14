@@ -26,6 +26,12 @@ public class ServiciosController {
         return serviciosService.guardarServicio(servicio);
     }
 
+    //buscar por servicio con id
+    @GetMapping("/buscar/{id}")
+    public Optional<Servicios> buscarServicioId(@PathVariable Long id) {
+        return serviciosService.buscarServicioId(id);
+    }
+
     //actualizar servicio
     @PutMapping("/actualizar/{id}")
     public Servicios actualizarServicio(@PathVariable Long id, @RequestBody Servicios servicio) {

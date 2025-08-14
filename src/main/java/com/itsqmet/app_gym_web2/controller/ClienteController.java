@@ -27,6 +27,12 @@ public class ClienteController {
         return clienteService.guardarCliente(cliente);
     }
 
+    //buscar cliente por id
+    @GetMapping("/buscar/{id}")
+    public Optional<Cliente> buscarClienteId(@PathVariable Long id) {
+        return clienteService.buscarClienteId(id);
+    }
+
     //actualizar cliente
     @PutMapping("/actualizar/{id}")
     public Cliente actualizarCliente(@PathVariable Long id, @RequestBody Cliente cliente) {
