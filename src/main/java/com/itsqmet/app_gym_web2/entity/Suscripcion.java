@@ -27,10 +27,10 @@ public class Suscripcion {
     private String plan;
     //fecha de inicio
     @NotNull
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaInicio;
     //fecha de fin
     @NotNull
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaFin;
 }

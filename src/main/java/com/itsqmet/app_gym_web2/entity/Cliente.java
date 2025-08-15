@@ -23,7 +23,7 @@ public class Cliente extends Usuario {
     //atributos
     //fechaNacimiento
     @NotNull
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaNacimiento;
     //genero
     @NotBlank
