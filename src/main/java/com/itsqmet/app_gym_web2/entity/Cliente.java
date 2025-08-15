@@ -1,5 +1,6 @@
 package com.itsqmet.app_gym_web2.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -18,7 +19,8 @@ import java.util.List;
 public class Cliente extends Usuario {
     //relaciones
     //relacion con la suscripción
-    @OneToMany(mappedBy = "cliente",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<Suscripcion> suscripciones;
     //atributos
     //fechaNacimiento

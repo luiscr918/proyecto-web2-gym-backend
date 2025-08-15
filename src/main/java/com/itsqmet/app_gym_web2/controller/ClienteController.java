@@ -62,5 +62,10 @@ public class ClienteController {
     public void eliminarCliente(@PathVariable Long id) {
         clienteService.eliminarCliente(id);
     }
-
+    //buscar con suscripciones
+    @GetMapping("/buscarConSuscripciones/{id}")
+    public Cliente buscarConSuscripciones(@PathVariable Long id) {
+        Optional<Cliente> clienteOpt = clienteService.buscarClienteId(id);
+        return clienteOpt.orElse(null);
+    }
 }

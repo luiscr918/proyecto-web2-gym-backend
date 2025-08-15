@@ -1,5 +1,7 @@
 package com.itsqmet.app_gym_web2.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -13,24 +15,25 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 public class Suscripcion {
-    //Relacion
-    //relacion con cliente
     @ManyToOne
     @JoinColumn(name = "cliente_id")
+    @JsonBackReference
     private Cliente cliente;
-    //id
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    //plan
+
     @NotNull
     private String plan;
-    //fecha de inicio
+
     @NotNull
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaInicio;
-    //fecha de fin
+
     @NotNull
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaFin;
 }
